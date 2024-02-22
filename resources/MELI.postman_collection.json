@@ -1,0 +1,302 @@
+{
+	"info": {
+		"_postman_id": "583404e9-15da-4e2b-ba4c-b81c3697312b",
+		"name": "MELI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33124949"
+	},
+	"item": [
+		{
+			"name": "signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"J. J. Demo\",\r\n    \"password\": \"12345\",\r\n    \"cpf\": \"42555878999\",\r\n    \"email\": \"admin@hotmail.com\",\r\n    \"confirm_password\": \"12345\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5001/api/signup",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "signin",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"admin@hotmail.com\",\r\n    \"password\": \"12345\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5001/api/signin",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"signin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "category",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDg1NzI0MzgsImlhdCI6MTcwODU2ODgzOCwiaXNzIjoiUGxpbWJvdSIsInN1YiI6ImRmZjY5N2NlLTRhODctNDVlNS04MzE4LWNkMDM3ZGU3YmEwNiIsInV1aWQiOiJkZmY2OTdjZS00YTg3LTQ1ZTUtODMxOC1jZDAzN2RlN2JhMDYiLCJuYW1lIjoiai4gai4gZGVtbyIsInJvbGUiOiJhZG1pbiJ9.7JQNT-iHnxQEfXV0bE2AkqxSGTm9wFNlCyWdrqNWUTo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Pet\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5001/api/user/admin/category",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"user",
+						"admin",
+						"category"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "notification",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDg1NzgwMTEsImlhdCI6MTcwODU3NDQxMSwiaXNzIjoiUGxpbWJvdSIsInN1YiI6ImRmZjY5N2NlLTRhODctNDVlNS04MzE4LWNkMDM3ZGU3YmEwNiIsInV1aWQiOiJkZmY2OTdjZS00YTg3LTQ1ZTUtODMxOC1jZDAzN2RlN2JhMDYiLCJuYW1lIjoiai4gai4gZGVtbyIsInJvbGUiOiJhZG1pbiJ9.gd4x2v1LfZ3xPbKnrJd6l8nIWfeCsKt0PucRXnqWaQo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"product_uuid\": \"7a484231-0254-41f7-aec7-4a3ca701562b\",\r\n    \"message\": \"Teste\",\r\n    \"link\": \"https://www.mercadolivre.com.br/alimento-golden-premium-especial-castrados-para-gato-adulto-sabor-frango-em-sacola-de-101kg/p/MLB10190738?pdp_filters=category:MLB85870#searchVariation=MLB10190738&position=18&search_layout=grid&type=product&tracking_id=72533529-d9bc-4134-9a0c-b3ba06de4296\",\r\n    \"exp_date\": \"2024-02-22T00:00:00Z\",\r\n    \"target\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5001/api/user/admin/notification",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"user",
+						"admin",
+						"notification"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "product",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDg1NzI0MzgsImlhdCI6MTcwODU2ODgzOCwiaXNzIjoiUGxpbWJvdSIsInN1YiI6ImRmZjY5N2NlLTRhODctNDVlNS04MzE4LWNkMDM3ZGU3YmEwNiIsInV1aWQiOiJkZmY2OTdjZS00YTg3LTQ1ZTUtODMxOC1jZDAzN2RlN2JhMDYiLCJuYW1lIjoiai4gai4gZGVtbyIsInJvbGUiOiJhZG1pbiJ9.7JQNT-iHnxQEfXV0bE2AkqxSGTm9wFNlCyWdrqNWUTo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Ração\",\r\n    \"category_uuid\": \"dd59497e-ea6c-444f-8c85-766d3aa5f54d\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5001/api/user/admin/product",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"user",
+						"admin",
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "product",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDg1NzI1MzAsImlhdCI6MTcwODU2ODkzMCwiaXNzIjoiUGxpbWJvdSIsInN1YiI6IjkwZTIyMmMyLWY5ZjYtNGJiZi04ZTk0LWQwMjM1MWIxODEwMyIsInV1aWQiOiI5MGUyMjJjMi1mOWY2LTRiYmYtOGU5NC1kMDIzNTFiMTgxMDMiLCJuYW1lIjoiai4gZy4gZGVtbyIsInJvbGUiOiJ1c2VyIn0.NLH9HXLShVjXlpSyKetnMXQnK_k6MlOf4KTBtG1qIs0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5001/api/user/product",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"user",
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user-product-history",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDg1NzI1MzAsImlhdCI6MTcwODU2ODkzMCwiaXNzIjoiUGxpbWJvdSIsInN1YiI6IjkwZTIyMmMyLWY5ZjYtNGJiZi04ZTk0LWQwMjM1MWIxODEwMyIsInV1aWQiOiI5MGUyMjJjMi1mOWY2LTRiYmYtOGU5NC1kMDIzNTFiMTgxMDMiLCJuYW1lIjoiai4gZy4gZGVtbyIsInJvbGUiOiJ1c2VyIn0.NLH9HXLShVjXlpSyKetnMXQnK_k6MlOf4KTBtG1qIs0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"product_uuid\": \"7a484231-0254-41f7-aec7-4a3ca701562b\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5001/api/user/user-product-history",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"user",
+						"user-product-history"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "notifications",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDg1NzYyMDksImlhdCI6MTcwODU3MjYwOSwiaXNzIjoiUGxpbWJvdSIsInN1YiI6IjkwZTIyMmMyLWY5ZjYtNGJiZi04ZTk0LWQwMjM1MWIxODEwMyIsInV1aWQiOiI5MGUyMjJjMi1mOWY2LTRiYmYtOGU5NC1kMDIzNTFiMTgxMDMiLCJuYW1lIjoiai4gZy4gZGVtbyIsInJvbGUiOiJ1c2VyIn0.kd6YuYuxmBp7UeiTZ6m_kgO_-EI6UIZOHQbYhs0Sd8I",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5001/api/user/notifications",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"user",
+						"notifications"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "access_token",
+			"value": "{{access_token}}"
+		}
+	]
+}
