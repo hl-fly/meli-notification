@@ -14,6 +14,7 @@ type SignUpUserRequest struct {
 	CPF             string `json:"cpf"`
 	Email           string `json:"email"`
 	ConfirmPassword string `json:"confirm_password"`
+	Type            string `json:"type"`
 }
 
 func (vm SignUpUserRequest) Validate() []error {
@@ -51,6 +52,14 @@ func (vm SignUpUserRequest) Validate() []error {
 }
 
 func (vm SignUpUserRequest) Parse() entity.User {
+	if vm.Type != "" {
+		return entity.User{
+			Name:  vm.Name,
+			Email: vm.Email,
+			CPF:   vm.CPF,
+			Type:  vm.Type,
+		}
+	}
 	return entity.User{
 		Name:  vm.Name,
 		Email: vm.Email,

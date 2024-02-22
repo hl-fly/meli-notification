@@ -13,7 +13,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"J. J. Demo\",\r\n    \"password\": \"12345\",\r\n    \"cpf\": \"42555878999\",\r\n    \"email\": \"admin@hotmail.com\",\r\n    \"confirm_password\": \"12345\"\r\n}",
+					"raw": "{\r\n    \"name\": \"J. P. Demo\",\r\n    \"password\": \"12345\",\r\n    \"cpf\": \"42255278999\",\r\n    \"email\": \"admin2@hotmail.com\",\r\n    \"confirm_password\": \"12345\",\r\n    \"type\": \"admin\"   \r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -108,46 +108,6 @@
 						"user",
 						"admin",
 						"category"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "notification",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDg1NzgwMTEsImlhdCI6MTcwODU3NDQxMSwiaXNzIjoiUGxpbWJvdSIsInN1YiI6ImRmZjY5N2NlLTRhODctNDVlNS04MzE4LWNkMDM3ZGU3YmEwNiIsInV1aWQiOiJkZmY2OTdjZS00YTg3LTQ1ZTUtODMxOC1jZDAzN2RlN2JhMDYiLCJuYW1lIjoiai4gai4gZGVtbyIsInJvbGUiOiJhZG1pbiJ9.gd4x2v1LfZ3xPbKnrJd6l8nIWfeCsKt0PucRXnqWaQo",
-							"type": "string"
-						}
-					]
-				},
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"product_uuid\": \"7a484231-0254-41f7-aec7-4a3ca701562b\",\r\n    \"message\": \"Teste\",\r\n    \"link\": \"https://www.mercadolivre.com.br/alimento-golden-premium-especial-castrados-para-gato-adulto-sabor-frango-em-sacola-de-101kg/p/MLB10190738?pdp_filters=category:MLB85870#searchVariation=MLB10190738&position=18&search_layout=grid&type=product&tracking_id=72533529-d9bc-4134-9a0c-b3ba06de4296\",\r\n    \"exp_date\": \"2024-02-22T00:00:00Z\",\r\n    \"target\": true\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "localhost:5001/api/user/admin/notification",
-					"host": [
-						"localhost"
-					],
-					"port": "5001",
-					"path": [
-						"api",
-						"user",
-						"admin",
-						"notification"
 					]
 				}
 			},
@@ -257,6 +217,46 @@
 						"api",
 						"user",
 						"user-product-history"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "notification",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDg1NzgwMTEsImlhdCI6MTcwODU3NDQxMSwiaXNzIjoiUGxpbWJvdSIsInN1YiI6ImRmZjY5N2NlLTRhODctNDVlNS04MzE4LWNkMDM3ZGU3YmEwNiIsInV1aWQiOiJkZmY2OTdjZS00YTg3LTQ1ZTUtODMxOC1jZDAzN2RlN2JhMDYiLCJuYW1lIjoiai4gai4gZGVtbyIsInJvbGUiOiJhZG1pbiJ9.gd4x2v1LfZ3xPbKnrJd6l8nIWfeCsKt0PucRXnqWaQo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"product_uuid\": \"7a484231-0254-41f7-aec7-4a3ca701562b\",\r\n    \"message\": \"Teste\",\r\n    \"link\": \"https://www.mercadolivre.com.br/alimento-golden-premium-especial-castrados-para-gato-adulto-sabor-frango-em-sacola-de-101kg/p/MLB10190738?pdp_filters=category:MLB85870#searchVariation=MLB10190738&position=18&search_layout=grid&type=product&tracking_id=72533529-d9bc-4134-9a0c-b3ba06de4296\",\r\n    \"exp_date\": \"2024-02-22T00:00:00Z\",\r\n    \"target\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5001/api/user/admin/notification",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"user",
+						"admin",
+						"notification"
 					]
 				}
 			},
