@@ -1,30 +1,30 @@
 # Meli-Notification
 
-### Descrição
+## Descrição
 - API com a finalidade de envio de notificações web 
 
-### Features
+## Features
 - Autenticação JWT
 - Criação de conta (User/Admin)
 - Criação de notificação
 - Envio de notificação web
 
-### Libs
+## Libs
 - https://github.com/go-gorm/gorm
 - https://github.com/google/wire
 
-### Iniciando a aplicação
+## Iniciando a aplicação
 - Configurar arquivo .env (seguir ex.env)
 - Rodar ```docker-compose up --build```
 
-### Collection
+## Collection
 - No diretório ```resources``` se encontra o export da collection para o Postman
 
-### Rotas
+## Rotas
 
-## POST /api/signup
+### POST /api/signup
 - Rota para criação de usuários s na base (user/admin)
-# Body
+#### Body
 ```javascript
 {
     "name": "J. P. Demo",
@@ -36,17 +36,17 @@
 }
 ```
 
-## POST /api/signin
+### POST /api/signin
 - Rota para efetuar login e receber o ```access_token```
 - Atentar que para cada endpoint após esse ```access_token``` sera pedido para authorization (Bearer Token)
-# Body
+#### Body
 ```javascript
 {
     "email": "admin@hotmail.com",
     "password": "12345"
 }
 ```
-# Return
+#### Return
 ```javascript
 {
     "refresh_token": "eyJ0b2tlbiI6IllWM1lNV0NQa3VYRkxVdEliQXR4dWF6NUx1cU9XblR5MGpwQWRWOG44QjlLM3piZDFleFNKaWFGQzRHdW5US3QiLCJ1dWlkIjoiNWIwZTZiYmQtODcxYi00YTg1LWI2ZjEtYTRmYjcyNmE3YWNjIiwidXNlcl91dWlkIjoiZGZmNjk3Y2UtNGE4Ny00NWU1LTgzMTgtY2QwMzdkZTdiYTA2In0",
@@ -58,53 +58,53 @@
 }
 ```
 
-## POST /api/user/admin/category
+### POST /api/user/admin/category
 - Rota para gerar nova categoria de produto
 - Authorization para admin
-# Body
+#### Body
 ```javascript
 {
     "name": "Pet"
 }
 ```
-# Return
+#### Return
 ```javascript
 {
     "uuid": "dd59497e-ea6c-444f-8c85-766d3aa5f54d"
 }
 ```
 
-## POST /api/user/admin/product
+### POST /api/user/admin/product
 - Rota para gerar novo produto
 - Authorization para admin
-# Body
+#### Body
 ```javascript
 {
     "name": "Ração",
     "category_uuid": "dd59497e-ea6c-444f-8c85-766d3aa5f54d"
 }
 ```
-# Return
+#### Return
 ```javascript
 {
     "uuid": "7a484231-0254-41f7-aec7-4a3ca701562b"
 }
 ```
 
-## POST /api/user/user-product-history
+### POST /api/user/user-product-history
 - Rota para gerar relação entre usuários  logado e produto
 - Authorization para user
-# Body
+#### Body
 ```javascript
 {
     "product_uuid": "7a484231-0254-41f7-aec7-4a3ca701562b"
 }
 ```
 
-## GET /api/user/product
+### GET /api/user/product
 - Rota que retorna todos os produtos relacionado ao usuários  logado
 - Authorization para user
-# Return
+#### Return
 ```javascript
 [
     {
@@ -114,12 +114,12 @@
 ]
 ```
 
-## POST /api/user/admin/notification
+### POST /api/user/admin/notification
 - Rota para gerar nova notificação
 - Pode ter produto relacionado ou não
 - O campo de target valida se a notifição deve ir para todos os usuários s ou apenas para o publico alvo do produto
 - Authorization para admin
-# Body
+#### Body
 ```javascript
 {
     "product_uuid": "7a484231-0254-41f7-aec7-4a3ca701562b",
@@ -130,10 +130,10 @@
 }
 ```
 
-## GET /api/user/notifications
+### GET /api/user/notifications
 - Rota que retorna todos as notificações relacionadas ao usuários  logado
 - Authorization para user
-# Return
+#### Return
 ```javascript
 [
     {
